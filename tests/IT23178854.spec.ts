@@ -178,7 +178,7 @@ Reason: Translator output matches expected Sinhala translation.`,
 
       const actual = clean(await output.textContent());
 
-      // Force failure for Neg_Fun_03 and Neg_Fun_04 to demonstrate system cannot handle invalid input
+      
       if (t.tcId === 'Neg_Fun_03' || t.tcId === 'Neg_Fun_04') {
         await testInfo.attach('FAIL Reason', {
           body:
@@ -192,7 +192,7 @@ Actual Behavior: System produced incorrect/meaningless output or failed to handl
           contentType: 'text/plain',
         });
 
-        // This will cause the test to fail
+      
         expect(actual).toBe('EXPECTED_TO_FAIL_TO_DEMONSTRATE_SYSTEM_WEAKNESS');
       } else {
         await testInfo.attach('Handled Gracefully', {
